@@ -1,0 +1,42 @@
+{
+  "$schema": "https://schema.tauri.app/config/2",
+  "productName": "runelauncher",
+  "version": "0.1.0",
+  "identifier": "dev.cozmoe.runelauncher",
+  "build": {
+    "beforeDevCommand": "pnpm dev",
+    "devUrl": "http://localhost:1420",
+    "beforeBuildCommand": "pnpm build",
+    "frontendDist": "../dist"
+  },
+  "plugins": {
+    "singleInstance": {
+      "active": true
+    }
+  },
+  "app": {
+    "windows": [
+      {
+        "title": "runelauncher",
+        "width": 700,
+        "height": 923,
+        "visible": true,
+        "decorations": false,
+        "transparent": true,
+        "minWidth": 700,
+        "minHeight": 923,
+        "fullscreen": false
+      }
+    ],
+    "security": {
+      "csp": null
+    }
+  },
+  "bundle": {
+    "active": true,
+    "targets": "all",
+    "icon": [
+      "icons/icon.ico"
+    ]
+  }
+}

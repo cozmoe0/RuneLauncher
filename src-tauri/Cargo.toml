@@ -1,0 +1,41 @@
+[package]
+name = "runelauncher"
+version = "0.1.0"
+edition = "2021"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[features]
+default = ["logging"]
+devtools = ["tauri-plugin-devtools", "tauri-plugin-devtools-app"]
+logging = ["tauri-plugin-log"]
+
+[dependencies]
+tauri = { version = "2", features = ["tray-icon"] }
+tauri-plugin-opener = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+tauri-plugin-single-instance = "2.3.4"
+tauri-plugin-http = { version = "2.5.2", features = ["json", "blocking"] }
+tauri-plugin-log = { version = "2.7.0", features = ["colored", "tracing"], optional = true }
+reqwest = { version = "0.12.23", features = ["json", "rustls-tls", "stream", "multipart"] }
+tokio = { version = "1.47.1", features = ["full", "macros"] }
+thiserror = "2.0.16"
+anyhow = "1.0.99"
+log = "0.4.28"
+tauri-plugin-store = "2.4.0"
+once_cell = "1.21.3"
+tauri-plugin-dialog = "2.4.0"
+dirs = "6.0.0"
+tauri-plugin-fs = "2.4.2"
+url = "2.5.7"
+tauri-plugin-devtools = {  version = "2.0.1", optional = true }
+tauri-plugin-devtools-app = {  version = "2.0.1", optional = true }
+openidconnect = { version="4.0.0", default-features = false }
+uuid = { version = "1.18.1", features = ["v4"] }
+urlencoding = "2.1.3"
+jsonwebtoken = "9.3.1"
+base64 = "0.22.1"
+rsa = "0.9"
+num-bigint = "0.4"
